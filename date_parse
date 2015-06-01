@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+@week_day = qw[Sun Mon Tues Weds Thur Fri Sat];
+@month = qw[Jan Feb Mar Apr May Jun Jul Aug Sept Oct Nov Dec];
+@day = '^([0-3]{1})([0-9]{1})$';
+@time = '([12]{1}+),([0-9]{1}+),[:]+,([0-6]{1}+),([0-9]{1}+),[:]+,([0-6]{1}+),([0-9]{1}+)';
+@time_zone = qw[EST PDT];
+@year = '^\d{4}$';
+
+  print "${week_day[5]} ${month[5]} 12 09:30:31 ${time_zone[0]} 2015";
