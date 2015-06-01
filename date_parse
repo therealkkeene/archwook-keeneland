@@ -1,10 +1,43 @@
 #!/usr/bin/perl
 
-@week_day = qw[Sun Mon Tues Weds Thur Fri Sat];
-@month = qw[Jan Feb Mar Apr May Jun Jul Aug Sept Oct Nov Dec];
-@day = '^([0-3]{1})([0-9]{1})$';
-@time = '([12]{1}+),([0-9]{1}+),[:]+,([0-6]{1}+),([0-9]{1}+),[:]+,([0-6]{1}+),([0-9]{1}+)';
-@time_zone = qw[EST PDT];
-@year = '^\d{4}$';
+$wkday = "Sun Mon Tue Wed Thu Fri Sat";
+$reg_wkday = '(\w+)\s+(\w+)\s+(\w+)\s+(\w+)\s+(\w+)\s+(\w+)\s+(\w+)';
 
-  print "${week_day[5]} ${month[5]} 12 09:30:31 ${time_zone[0]} 2015";
+if ($wkday =~ m/$reg_wkday/) {
+   print "My birthday this month starts on $6 ";
+}
+
+$month = "Jun Jul Aug";
+$reg_month = '(\w+)\s+(\w+)\s+(\w+)';
+
+if ($month =~ m/$reg_month/) {
+    print "$1 ";
+}
+
+$date = "11 12 13 14";
+$reg_date = '(\w+)\s+(\w+)\s+(\w+)\s+(\w+)';
+
+if ($date =~ m/$reg_date/) {
+   print "$2 ";
+}
+
+$time = "12 00";
+$reg_time = '(\w+)\s+(\w+)';
+
+if ($time =~ m/$reg_time/) {
+   print "$1:$2:$2 ";
+}
+
+$tzone = "EST PST CET";
+$reg_tzone = '(\w+)\s+(\w+)\s+(\w+)';
+
+if ($tzone =~ m/$reg_tzone/) {
+   print "$1 ";
+}
+
+$year = "1984 2012 2015";
+$reg_year = '(\w+)\s+(\w+)\s+(\w+)';
+
+if ($year =~ m/$reg_year/) {
+   print "$3. Buy me something awesome!";
+}
