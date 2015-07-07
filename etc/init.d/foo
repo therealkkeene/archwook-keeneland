@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# This is a startup script to start the "foo" daemon located in /usr/local/sbin/foo
+
+test -f /usr/local/sbin/foo || exit 0
+case "$1" in
+   start)
+      echo -n "Starting foo: foo"
+      /usr/local/sbin/foo
+      echo "."
+      ;;
+esac
